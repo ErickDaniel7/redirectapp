@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando para o App</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                // Redireciona para a Play Store se o usuário estiver no Android
+                window.location.href = "https://play.google.com/store/apps/details?id=com.totvs.hr.mobile";
+            } else if (/iPad|iPhone|iPod/.test(userAgent)) {
+                // Redireciona para a App Store se o usuário estiver no iOS
+                window.location.href = "https://apps.apple.com/br/app/meu-rh/id1263940937";
+            } else {
+                // Caso não seja nem Android nem iOS, redireciona para uma página web
+                window.location.href = "https://www.seuwebsite.com";
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Redirecionando...</h1>
+    <p>Se o redirecionamento não ocorrer automaticamente, <a href="https://play.google.com/store/apps/details?id=com.totvs.hr.mobile">clique aqui para Android</a> ou <a href="https://apps.apple.com/br/app/meu-rh/id1263940937">aqui para iOS</a>.</p>
+</body>
+</html>
